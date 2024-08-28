@@ -1,4 +1,3 @@
-from django.shortcuts import render
 """
 Views for the user API.
 """
@@ -9,6 +8,7 @@ from user.serializers import (
     UserSerializer,
     AuthTokenSerializer,
 )
+
 
 class CreateUserView(generics.CreateAPIView):
     """Create a new user in the system"""
