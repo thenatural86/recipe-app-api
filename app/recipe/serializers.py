@@ -6,7 +6,7 @@ from rest_framework import serializers  # type: ignore
 from core.models import Recipe
 
 
-class RecipeSerializer(serializers.ModelSerializers):
+class RecipeSerializer(serializers.ModelSerializer):
     """Serializer for recipes."""
 
     class Meta:
