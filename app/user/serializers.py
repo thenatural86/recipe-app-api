@@ -3,7 +3,7 @@ Serializers for the user API View.
 """
 from django.contrib.auth import (
     get_user_model,
-    authenticate
+    authenticate,
 )
 from django.utils.translation import gettext as _
 
@@ -39,7 +39,7 @@ class AuthTokenSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(
         style={'input_type': 'password'},
-        trim_whitespace='false'
+        trim_whitespace=False
     )
 
     def validate(self, attrs):
@@ -49,7 +49,7 @@ class AuthTokenSerializer(serializers.Serializer):
         user = authenticate(
             request=self.context.get('request'),
             username=email,
-            password=password
+            password=password,
         )
         if not user:
             msg = _('Unable to authenticate with provided credentials.')
