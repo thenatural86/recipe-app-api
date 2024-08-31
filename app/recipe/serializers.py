@@ -20,11 +20,12 @@ class TagSerializer(serializers.ModelSerializer):
 
 class RecipeSerializer(serializers.ModelSerializer):
     """Serializer for recipes."""
+    tags = TagSerializer(many=True, required=False)
 
     class Meta:
         model = Recipe
         fields = ['id', 'title', 'time_minutes', 'price', 'link', 'tags']
-        read_only = ['id']
+        read_only_fields = ['id']
 
     def create(self, validated_data):
         """Create a recipe."""
