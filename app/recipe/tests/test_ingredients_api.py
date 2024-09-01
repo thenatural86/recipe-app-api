@@ -12,10 +12,10 @@ from core.models import Ingredient
 
 from recipe.serializers import IngredientSerializer
 
-INGREDIENTS_URL = reverse('recipe:ingredients=list')
+INGREDIENTS_URL = reverse('recipe:ingredient-list')
 
 
-def create_user(email='user@example.com', password='test123'):
+def create_user(email='user@example.com', password='testpass123'):
     """Create and return a user."""
     return get_user_model().objects.create_user(
         email=email,
@@ -23,7 +23,7 @@ def create_user(email='user@example.com', password='test123'):
         )  # type: ignore
 
 
-class PublicIngredientApiTests(TestCase):
+class PublicIngredientsApiTests(TestCase):
     """Test unauthenticated API requests."""
 
     def setUp(self):
