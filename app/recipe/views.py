@@ -51,6 +51,7 @@ class IngredientViewSet(
         mixins.ListModelMixin,
         viewsets.GenericViewSet,
         mixins.UpdateModelMixin,
+        mixins.DestroyModelMixin
         ):
     """Manage ingredients in the database."""
     serializer_class = serializers.IngredientSerializer
