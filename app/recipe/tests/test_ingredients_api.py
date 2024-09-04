@@ -75,7 +75,7 @@ class PrivateIngredientsApiTests(TestCase):
         self.assertEqual(res.data[0]['id'], ingredient.id)  # type: ignore
 
     def test_update_ingredient(self):
-        """Test updatingan ingredient."""
+        """Test updating an ingredient."""
         ingredient = Ingredient.objects.create(user=self.user, name='Cilantro')
 
         payload = {'name': 'Coriander'}
